@@ -1,0 +1,32 @@
+class Solution(object):
+    def reversePrefix(self, word, ch):
+        """
+        :type word: str
+        :type ch: str
+        :rtype: str
+        """
+        res=""
+        for i in range(0,len(word)):
+            res+=word[i]
+            if word[i]==ch:
+        
+                
+                break
+            else:
+                continue
+            
+            
+        x=i
+        if ch not in word:
+            return word
+        else:
+
+            s=res[::-1]+word[x+1:len(word)]
+            return s
+        
+
+
+        Input: word = "abcdefd", ch = "d"
+Output: "dcbaefd"
+Explanation: The first occurrence of "d" is at index 3. 
+Reverse the part of word from 0 to 3 (inclusive), the resulting string is "dcbaefd".
