@@ -1,0 +1,47 @@
+class Solution(object):
+    def mergeAlternately(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: str
+        """
+        res=[]
+        if(len(word1)==len(word2)):
+            for i in range(0,len(word1)):
+                for j in range(0,len(word2)):
+                    if i==j:
+                
+                        res.append(word1[i])
+                        res.append(word2[j])
+                    else:
+                        continue
+        elif (len(word1)>len(word2)):
+            for i in range(0,len(word2)):
+                for j in range(len(word2)):
+                    if i==j:
+                        res.append(word1[i])
+                        res.append(word2[j])
+                    else:
+                        continue
+            res.append(word1[len(word2):len(word1)])
+        else:
+            for i in range(0,len(word1)):
+                for j in range(len(word1)):
+                    if i==j:
+                        res.append(word1[i])
+                        res.append(word2[j])
+                    else:
+                        continue
+            res.append(word2[len(word1):len(word2)])
+
+
+
+        return ("".join(res))
+        Input: word1 = "abc", word2 = "pqr"
+Output: "apbqcr"
+Explanation: The merged string will be merged as so:
+word1:  a   b   c
+word2:    p   q   r
+merged: a p b q c r
+
+        
